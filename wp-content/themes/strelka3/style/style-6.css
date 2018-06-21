@@ -1,0 +1,25 @@
+/* MENU */
+ul.menu li a {
+    background-color: rgba(139, 0, 39, 0.5);
+}
+
+ul.menu li a:hover {
+    background-color: rgba(139, 0, 39, 0.85);
+}
+
+ul.menu li.current-menu-item a {
+    background-color: #8b0027;
+}
+
+/* CONTENT */
+.content-title a, h2.content-title {
+    color: #8b0027;
+}
+
+.read-more {
+    color: #8b0027;
+}
+
+.footer {
+    background-color: rgba(139, 0, 39, 0.2);
+}

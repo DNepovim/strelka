@@ -1,0 +1,302 @@
+/*
+Theme Name: Strelka Theme 3
+Theme URI: http://www.strelka.cz
+Author: Dominik Blaha
+Author URI: http://www.dombl.cz
+Description: Theme created for site strelka.cz
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: strelkaTheme
+ 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+h1, h2, h3, h4, h5, p, ul, ol {
+    font-family: "Arial", sans-serif;
+    color: #000000;
+    margin: 0;
+}
+
+p, .widget {
+    font-size: 20px;
+}
+
+strong {
+    color: #9fa908;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding: 7.5px 5px;
+}
+
+.background-image {
+    position: absolute;
+
+}
+
+/* HEAD */
+#head {
+    height: 195px;
+}
+
+#head-logo img {
+    position: relative;
+    left: 10px;
+}
+
+#head-title {
+    padding: 30px 0 0 10px;
+    text-shadow: 0px 0px 10px #fff;
+}
+
+#head-title-content {
+    border-left: 2px solid;
+    padding: 10px;
+    color: #3399cc;
+    text-align: left;
+}
+
+#head h1, h2 {
+    vertical-align: middle;
+}
+
+#head h1 {
+    font-size: 50px;
+    color: #3399cc;
+    font-weight: bold;
+    margin: 2px;
+}
+
+#head h2 {
+    font-size: 25px;
+    color: #9fa908;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.moto h3 {
+    font-style: italic;
+    letter-spacing: 0.1em;
+    position: relative;
+    top: 120px;
+    font-size: 30px;
+    color: #9fa908;
+    text-shadow: 0px 0px 10px #fff;
+    text-align: left;
+}
+
+.menu-button a {
+    background-color: rgba(159, 169, 8, 0.51);
+    color: #000;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    border-radius: 15px;
+    margin: 0;
+    padding: 5px;
+}
+
+.menu-button a:hover {
+    display: block;
+    background-color: rgba(159, 169, 8, 0.85);
+    color: #000000;
+    text-decoration: none;
+}
+/*BUTTONS*/
+.button {
+    height: 200px;
+    position: relative;
+}
+
+.button img {
+    position: absolute;
+    border-radius: 15px;
+}
+
+.button-title {
+    position: relative;
+    z-index: 10;
+    top: 140px;
+    text-align: center;
+    color: #000;
+}
+
+.button-title h1 {
+    margin: 0;
+    padding: 5px;
+    font-size: 25px;
+    background-color: rgba(159, 169, 8, 0.85);
+}
+
+.button-title h2 {
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #2aabd2;
+    border-radius: 0 0 15px 15px;
+}
+
+.button a:hover .button-div {
+    position: relative;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+}
+
+/*MENU*/
+.menu {
+    padding: 0;
+}
+
+ul.menu li {
+    list-style-type: none;
+}
+
+ul.menu li a {
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0.5em 0;
+    margin: 0 0 0.25em 0;
+
+}
+
+ul.menu li a {
+    color: #000;
+    display: block;
+    background-color: rgba(42, 171, 210, 0.5);
+
+}
+
+ul.menu li a:hover {
+    text-decoration: none;
+    background-color: rgba(42, 171, 210, 0.85);
+}
+
+ul.menu li.current-menu-item a {
+    background-color: #2aabd2;
+}
+
+/*POST*/
+.post, .page {
+    /*border: solid 2px #9fa908;
+    border-radius: 15px;*/
+    padding: 1em 2em;
+    margin: 0 0 0.5em 0;
+}
+
+.content-title a, h2.content-title {
+    color: #2aabd2;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin: 0 0 1em 0;
+}
+
+.content-title a:hover {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.content-thumbnail {
+    float: left;
+    margin: 1em 1em 0 0;
+}
+
+.read-more {
+    float: right;
+    color: #2aabd2;
+}
+
+hr.clear {
+    clear: both;
+    height: 1px;
+    border: none;
+    margin: 0;
+    visibility: hidden;
+}
+
+.navigation {
+    text-align: center;
+
+}
+
+.navigation a {
+    color: #9fa908;
+    font-size: 15px;
+}
+
+/*SIDEBAR*/
+.widget {
+    border: solid 2px #2aabd2;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 0 0 0.5em 0;
+}
+
+.widget ul li {
+    list-style-type: none;
+}
+
+/*FOOTER*/
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    width: 1130px;
+    background-color: rgba(42, 171, 210, 0.2);
+    border-radius: 15px 15px 0 0;
+}
+
+.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.footer p, a {
+    font-size: 0.85em;
+    text-align: right;
+    vertical-align: bottom;
+    color: #2aabd2;
+}
+
+/* IMG */
+img.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    float: right;
+}
+
+.alignleft {
+    float: left;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* IFRAME */
+
+iframe {
+    width: 100%;
+}

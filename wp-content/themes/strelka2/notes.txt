@@ -1,0 +1,3 @@
+petekajici popisy tlacitek v mobilni versi
+dalsi urovne v menu
+mozna ifi v sablone nahradit objekty tridy

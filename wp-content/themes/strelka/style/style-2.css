@@ -1,0 +1,33 @@
+strong {
+    color: #ffbe00;
+}
+
+/* MENU */
+ul.menu li a {
+    background-color: rgba(255, 190, 0, 0.5);
+
+}
+
+ul.menu li a:hover {
+    background-color: rgba(255, 190, 0, 0.85);
+}
+
+
+ul.menu li.current-menu-item a {
+    background-color: #ffbe00;
+}
+
+/* POST */
+.post, .page {
+    border: solid 2px #ffbe00;
+}
+
+
+/* CONTENT */
+.content-title a ,h2.content-title {
+    color: #ffbe00;
+}
+
+.widget {
+    border: solid 2px #ffbe00;
+}
