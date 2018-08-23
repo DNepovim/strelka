@@ -209,7 +209,7 @@ class nggdb
      * @param bool $exclude
      * @return An array containing the nggImage objects representing the images in the gallery.
      */
-    function get_ids_from_gallery($id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = true) {
+    static function get_ids_from_gallery($id, $order_by = 'sortorder', $order_dir = 'ASC', $exclude = true) {
 
         global $wpdb;
 
@@ -272,8 +272,8 @@ class nggdb
 
         // Unserialize the galleries inside the album
         if ( $album ) {
-			// XXX nggdb is used statically, cannot inherit from Ngg_Serializable
-			$serializer = new Ngg_Serializable();
+
+	        $serializer = new Ngg_Serializable();
 
             if ( !empty( $album->sortorder ) )
                 $album->gallery_ids = $serializer->unserialize( $album->sortorder );
@@ -638,7 +638,7 @@ class nggdb
      *
      * @param integer $page start offset as page number (0,1,2,3,4...)
      * @param integer $limit the number of result
-     * @param bool $exclude do not show exluded images
+     * @param bool $exclude do not show excluded images
      * @param int $galleryId Only look for images with this gallery id, or in all galleries if id is 0
      * @param string $orderby is one of "id" (default, order by pid), "date" (order by exif date), sort (order by user sort order)
      * @deprecated
@@ -738,7 +738,7 @@ class nggdb
 
             // split the words it a array if seperated by a space or comma
             preg_match_all('/".*?("|$)|((?<=[\\s",+])|^)[^\\s",+]+/', $request, $matches);
-            $search_terms = array_map(create_function('$a', 'return trim($a, "\\"\'\\n\\r ");'), $matches[0]);
+            $search_terms = array_map(array($this, 'trim_quotes_and_whitespace'), $matches[0]);
 
             $n = '%';
             $searchand = '';
@@ -783,6 +783,11 @@ class nggdb
         return null;
     }
 
+    function trim_quotes_and_whitespace($str)
+    {
+    	return trim($str, "\"'\n\r");
+    }
+
     /**
      * search for galleries and return the result
      *
@@ -801,7 +806,7 @@ class nggdb
 
             // split the words it a array if seperated by a space or comma
             preg_match_all('/".*?("|$)|((?<=[\\s",+])|^)[^\\s",+]+/', $request, $matches);
-            $search_terms = array_map(create_function('$a', 'return trim($a, "\\"\'\\n\\r ");'), $matches[0]);
+            $search_terms = array_map(array($this, 'trim_quotes_and_whitespace'), $matches[0]);
 
             $n = '%';
             $searchand = '';
@@ -849,7 +854,7 @@ class nggdb
 
             // split the words it a array if seperated by a space or comma
             preg_match_all('/".*?("|$)|((?<=[\\s",+])|^)[^\\s",+]+/', $request, $matches);
-            $search_terms = array_map(create_function('$a', 'return trim($a, "\\"\'\\n\\r ");'), $matches[0]);
+            $search_terms = array_map(array($this, 'trim_quotes_and_whitespace'), $matches[0]);
 
             $n = '%';
             $searchand = '';
@@ -892,16 +897,14 @@ class nggdb
         global $wpdb;
 
         // XXX nggdb is used statically, cannot inherit from Ngg_Serializable
-        $serializer = new Ngg_Serializable();
+	    $serializer = new Ngg_Serializable();
 
         // Query database for existing values
         // Use cache object
         $old_values = $wpdb->get_var( $wpdb->prepare( "SELECT meta_data FROM $wpdb->nggpictures WHERE pid = %d ", $id ) );
-        $old_values = $serializer->unserialize( $old_values );
-
+        $old_values = $serializer->unserialize( $old_values);
         $meta = array_merge( (array)$old_values, (array)$new_values );
         $serialized_meta = $serializer->serialize($meta);
-
         $result = $wpdb->query( $wpdb->prepare("UPDATE $wpdb->nggpictures SET meta_data = %s WHERE pid = %d", $serialized_meta, $id) );
 
         do_action('ngg_updated_image_meta', $id, $meta);
